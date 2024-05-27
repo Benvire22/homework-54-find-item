@@ -1,0 +1,21 @@
+.Cell {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 1px;
+    background: #ccc;
+}
+
+.Cell:hover {
+    transition: 0.3s;
+    background: #e8c9c9;
+}
+
+.clicked {
+    background: #fff;
+}
+
+.clicked:hover {
+    background: #fff;
+}
