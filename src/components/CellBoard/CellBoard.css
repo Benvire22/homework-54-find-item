@@ -1,5 +1,9 @@
 .CellBoard {
-    width: 160px;
+    width: 350px;
     display: flex;
     flex-wrap: wrap;
+    gap: 2px;
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: center;
 }

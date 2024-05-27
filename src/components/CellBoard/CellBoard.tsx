@@ -26,12 +26,12 @@ const createItems = () => {
 };
 
 const CellBoard = () => {
-    const [items, setItems] = useState<ICell[]>(createItems());
+    const [sells, setSells] = useState<ICell[]>(createItems());
     const [counter, setCounter] = useState(0);
 
 
     const onCellClick = (index: number) => {
-      setItems(prevState => {
+        setSells(prevState => {
           const copyCells = [...prevState];
 
           if (!copyCells[index].clicked) {
@@ -43,12 +43,18 @@ const CellBoard = () => {
       });
     };
 
+    const resetGame = () => {
+        setSells(createItems());
+        setCounter(0);
+    };
+
     return (
         <div className="CellBoard">
-            {items.map(({hasItem, clicked}, i) => {
-                return <Cell hasItem={hasItem} clicked={clicked} onCellClick={() => onCellClick(i)}/>;
+            {sells.map(({hasItem, clicked}, i) => {
+                return <Cell hasItem={hasItem} clicked={clicked} onCellClick={() => onCellClick(i)} key={i}/>;
             })}
             <h2>Tries: {counter}</h2>
+            <button onClick={resetGame}>Reset</button>
         </div>
     );
 };
