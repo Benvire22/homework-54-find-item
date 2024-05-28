@@ -20,7 +20,7 @@ const CellBoard: React.FC<Props> = ({cells, onCellClick, overlay}) => {
       {cells.map(({hasItem, clicked}, i) => (
         <Cell hasItem={hasItem} clicked={clicked} onCellClick={() => onCellClick(i)} key={i}/>
       ))}
-      <Overlay overlay={overlay}/>
+      <Overlay showOverlay={overlay}/>
     </div>
   );
 };

@@ -2,13 +2,13 @@ import React from 'react';
 import './Overlay.css';
 
 interface Props {
-  overlay: boolean;
+  showOverlay: boolean;
 }
 
-const Overlay: React.FC<Props> = ({overlay}) => {
+const Overlay: React.FC<Props> = ({showOverlay}) => {
   const overlayClasses = ['Overlay'];
 
-  if (overlay) {
+  if (showOverlay) {
     overlayClasses.push('show');
   }
 

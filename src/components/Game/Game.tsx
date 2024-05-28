@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import MyButton from './MyButton/MyButton';
 import Counter from './Counter/Counter';
 import CellBoard from './CellBoard/CellBoard';
@@ -32,29 +32,30 @@ const Game = () => {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
   const onCellClick = (index: number) => {
-    if (!cells[index].clicked) {
-      setCounter((prevState) => prevState + 1);
-    }
+    const cell = cells[index];
 
-    setCells(prevState => {
-      const copyCells = [...prevState];
-      const cell = {...copyCells[index], clicked: true};
+    if (!cell.clicked) {
+      setCells(prevState => {
+        const copyCells = [...prevState];
+        copyCells[index] = {...copyCells[index], clicked: true};
 
-      if (!copyCells[index].clicked) {
-        copyCells[index] = cell;
+        return copyCells;
+      });
+
+      if (cell.hasItem) {
+        setShowOverlay(prevState => !prevState);
       }
-      return copyCells;
-    });
 
-    if (cells[index].hasItem) {
-      setShowOverlay(prevState => !prevState);
+      setCounter((prevState) => prevState + 1);
     }
   };
 
   const resetGame = () => {
-    setCells(createItems());
-    setCounter(0);
-    setShowOverlay(false);
+    if (counter > 0) {
+      setCells(createItems());
+      setCounter(0);
+      setShowOverlay(false);
+    }
   };
 
   return (
