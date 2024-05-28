@@ -1,10 +1,9 @@
 import './App.css';
-import CellBoard from "./components/CellBoard/CellBoard";
+import Game from "./components/Game/Game";
 
 const App = () => (
     <div className="App">
-        Hello world!
-        <CellBoard />
+        <Game />
     </div>
 );
 
