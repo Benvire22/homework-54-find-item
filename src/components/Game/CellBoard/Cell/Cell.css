@@ -1,23 +1,23 @@
 .Cell {
-    width: 50px;
-    height: 50px;
-    background: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .Cell:hover {
-    transition: 0.3s;
-    background: #e8c9c9;
+  transition: 0.3s;
+  background: #e8c9c9;
 }
 
 .clicked {
-    background: #fff;
+  background: #fff;
 }
 
 .clicked:hover {
-    background: #fff;
+  background: #fff;
 }
